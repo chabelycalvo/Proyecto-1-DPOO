@@ -1,94 +1,135 @@
-package Sistema1;
-import java.lang.reflect.Field;
-import java.util.ArrayList;
+package proyecto;
 
 public abstract class Pieza {
-	 protected String Titulo;
-	 protected int Anio;
-	 protected String LugarCreacion;
-	 protected int IDPieza;
-	 protected boolean DisponibleValorFijo;
-	 protected boolean PiezaBloqueada;
-	 protected boolean PiezaVendida;
-	 protected double ValorMinimo;
-	 protected double ValorInicial;
-	 protected String Ubicacion;
-	 
-	 public Pieza(String Titulo, int Anio, String LugarCreacion,int IDPieza,boolean DisponibleValorFijo,boolean PiezaBloqueada,boolean PiezaVendida,double ValorMinimo,double ValorInicial,String Ubicacion) {
-	 this.Titulo = Titulo;
-	 this.Anio = Anio;
-	 this.LugarCreacion = LugarCreacion;
-	 this.IDPieza = IDPieza;
-	 this.DisponibleValorFijo = DisponibleValorFijo;
-	 this.PiezaBloqueada = PiezaBloqueada;
-	 this.PiezaVendida = PiezaVendida;
-	 this.ValorMinimo = ValorMinimo;
-	 this.ValorInicial = ValorInicial;
-	 this.Ubicacion = Ubicacion;
-	 }
+    protected String titulo;
+    protected int ano;
+    protected String lugar_creacion;
+    protected String id_pieza;
+    protected boolean disponible_valor_fijo;
+    protected boolean pieza_bloqueada;
+    protected boolean pieza_vendida;
+    protected double valor_minimo;
+    protected double valor_inicial;
+    protected String ubicacion;
+    
+    // Métodos getters y setters
+    
+    public String getTitulo() {
+        return titulo;
+    }
 
-	public boolean isDisponibleValorFijo() {
-		return DisponibleValorFijo;
-	}
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
-	public void setDisponibleValorFijo(boolean disponibleValorFijo) {
-		DisponibleValorFijo = disponibleValorFijo;
-	}
+    public int getAno() {
+        return ano;
+    }
 
-	public boolean isPiezaBloqueada() {
-		return PiezaBloqueada;
-	}
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
 
-	public void setPiezaBloqueada(boolean piezaBloqueada) {
-		PiezaBloqueada = piezaBloqueada;
-	}
+    public String getLugar_creacion() {
+        return lugar_creacion;
+    }
 
-	public boolean isPiezaVendida() {
-		return PiezaVendida;
-	}
+    public void setLugar_creacion(String lugar_creacion) {
+        this.lugar_creacion = lugar_creacion;
+    }
 
-	public void setPiezaVendida(boolean piezaVendida) {
-		PiezaVendida = piezaVendida;
-	}
+    public String getId_pieza() {
+        return id_pieza;
+    }
 
-	public double getValorMinimo() {
-		return ValorMinimo;
-	}
+    public void setId_pieza(String id_pieza) {
+        this.id_pieza = id_pieza;
+    }
 
-	public void setValorMinimo(double valorMinimo) {
-		ValorMinimo = valorMinimo;
-	}
+    public boolean isDisponible_valor_fijo() {
+        return disponible_valor_fijo;
+    }
 
-	public String getUbicacion() {
-		return Ubicacion;
-	}
+    public void setDisponible_valor_fijo(boolean disponible_valor_fijo) {
+        this.disponible_valor_fijo = disponible_valor_fijo;
+    }
 
-	public void setUbicacion(String ubicacion) {
-		Ubicacion = ubicacion;
-	}
+    public boolean isPieza_bloqueada() {
+        return pieza_bloqueada;
+    }
 
-	public String getTitulo() {
-		return Titulo;
-	}
+    public void setPieza_bloqueada(boolean pieza_bloqueada) {
+        this.pieza_bloqueada = pieza_bloqueada;
+    }
 
-	public int getAnio() {
-		return Anio;
-	}
+    public boolean isPieza_vendida() {
+        return pieza_vendida;
+    }
 
-	public String getLugarCreacion() {
-		return LugarCreacion;
-	}
+    public void setPieza_vendida(boolean pieza_vendida) {
+        this.pieza_vendida = pieza_vendida;
+    }
 
-	public int getIDPieza() {
-		return IDPieza;
-	}
+    public double getValor_minimo() {
+        return valor_minimo;
+    }
 
-	public double getValorInicial() {
-		return ValorInicial;
-	}
+    public void setValor_minimo(double valor_minimo) {
+        this.valor_minimo = valor_minimo;
+    }
 
-	}
+    public double getValor_inicial() {
+        return valor_inicial;
+    }
 
-	 
+    public void setValor_inicial(double valor_inicial) {
+        
+    }
 
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+    
+    // Métodos adicionales
+    
+    public void bloquearPieza() {
+        if (disponible_valor_fijo && !pieza_bloqueada && !pieza_vendida) {
+            pieza_bloqueada = true;
+            System.out.println("Pieza bloqueada exitosamente.");
+        } else {
+            System.out.println("La pieza no puede ser bloqueada en este momento.");
+        }
+    }
+
+    public void desbloquearPieza() {
+        if (pieza_bloqueada) {
+            pieza_bloqueada = false;
+            System.out.println("Pieza desbloqueada exitosamente.");
+        } else {
+            System.out.println("La pieza no está bloqueada.");
+        }
+    }
+
+    public void marcarComoVendida() {
+        if (disponible_valor_fijo && !pieza_vendida && !pieza_bloqueada) {
+            pieza_vendida = true;
+            disponible_valor_fijo = false;
+            System.out.println("Pieza vendida exitosamente.");
+        } else {
+            System.out.println("La pieza no puede ser vendida en este momento.");
+        }
+    }
+
+    public void actualizarDisponibilidad(boolean disponible) {
+        this.disponible_valor_fijo = disponible;
+        if (!disponible) {
+            pieza_bloqueada = false;
+            pieza_vendida = false;
+        }
+    }
+}
 
