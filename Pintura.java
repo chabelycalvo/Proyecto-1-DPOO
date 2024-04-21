@@ -7,8 +7,9 @@ public class Pintura extends Pieza {
     protected String Materiales;
 
     // Constructor
-    public Pintura(String Titulo, int Anio, String LugarCreacion,int IDPieza,Boolean DisponibleValorFijo,Boolean PiezaBloqueada,Boolean PiezaVendida,Double ValorMinimo,Double ValorInicial,String Ubicacion, double alto, double ancho, String tecnica, String materiales) {
-        super(Titulo, Anio, LugarCreacion,IDPieza,DisponibleValorFijo,PiezaBloqueada,PiezaVendida,ValorMinimo,ValorInicial,Ubicacion);
+    public Pintura(String titulo, int anio, String lugar_creacion, int id_pieza, Boolean disponible_valor_fijo,
+			Boolean pieza_bloqueada, Boolean pieza_vendida, Double valor_minimo, Double valor_inicial, String ubicacion, double alto, double ancho, String tecnica, String materiales) {
+        super(titulo, anio, lugar_creacion,id_pieza,disponible_valor_fijo,pieza_bloqueada,pieza_vendida,valor_minimo,valor_inicial,ubicacion);
         this.Alto = Alto;
         this.Ancho = Ancho;
         this.Tecnica = Tecnica;

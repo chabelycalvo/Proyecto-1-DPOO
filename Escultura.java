@@ -8,10 +8,10 @@ public class Escultura extends Pieza {
     protected double Peso;
     protected String DetallesInstalacion;
 
-	public Escultura(String Titulo, int Anio, String LugarCreacion, int IDPieza, boolean DisponibleValorFijo,
-			boolean PiezaBloqueada, boolean PiezaVendida, double ValorMinimo, double ValorInicial, String Ubicacion,double Alto,double Ancho, double Profundidad,String Materiales,double Peso, String DetallesInstalacion) {
-		super(Titulo, Anio, LugarCreacion, IDPieza, DisponibleValorFijo, PiezaBloqueada, PiezaVendida, ValorMinimo,
-				ValorInicial, Ubicacion);
+	public Escultura(String titulo, int anio, String lugar_creacion, int id_pieza, Boolean disponible_valor_fijo,
+			Boolean pieza_bloqueada, Boolean pieza_vendida, Double valor_minimo, Double valor_inicial, String ubicacion,double Alto,double Ancho, double Profundidad,String Materiales,double Peso, String DetallesInstalacion) {
+		super(titulo, anio, lugar_creacion, id_pieza, disponible_valor_fijo, pieza_bloqueada, pieza_vendida, valor_minimo,
+				valor_inicial, ubicacion);
 		this.Alto=Alto;
 	    this.Ancho=Ancho;
 	    this.Profundidad=Profundidad;

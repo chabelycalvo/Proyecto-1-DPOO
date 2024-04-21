@@ -7,10 +7,10 @@ public class Video extends Pieza {
     protected String Formato;
     protected String Tamanio;
 
-	public Video(String Titulo, int Anio, String LugarCreacion, int IDPieza, boolean DisponibleValorFijo,
-			boolean PiezaBloqueada, boolean PiezaVendida, double ValorMinimo, double ValorInicial, String Ubicacion,Duration Duracion,String Formato,String Tamanio) {
-		super(Titulo, Anio, LugarCreacion, IDPieza, DisponibleValorFijo, PiezaBloqueada, PiezaVendida, ValorMinimo,
-				ValorInicial, Ubicacion);
+	public Video(String titulo, int anio, String lugar_creacion, int id_pieza, Boolean disponible_valor_fijo,
+			Boolean pieza_bloqueada, Boolean pieza_vendida, Double valor_minimo, Double valor_inicial, String ubicacion,Duration Duracion,String Formato,String Tamanio) {
+		super(titulo, anio, lugar_creacion, id_pieza, disponible_valor_fijo, pieza_bloqueada, pieza_vendida, valor_minimo,
+				valor_inicial, ubicacion);
 		this.Duracion=Duracion;
 		this.Formato=Formato;
 		this.Tamanio=Tamanio;
