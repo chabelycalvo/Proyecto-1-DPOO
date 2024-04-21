@@ -6,9 +6,15 @@ import java.util.Map;
 	private int id_operador;
 	private String nombre_operador;
 	private String permisos;
-	private Map<String, Subasta> subastasActivas;
+	private Map<Integer, Subasta> subastasActivas;
 	
-		
+
+	public Operador(int id_operador, String nombre_operador, String permisos, Map<Integer, Subasta> subastasActivas, String login, String password) {
+	    this.id_operador = id_operador;
+	    this.nombre_operador = nombre_operador;
+	    this.permisos = permisos;
+	    this.subastasActivas = subastasActivas;
+	}
 	public int getId_operador() {
 		return id_operador;
 	}
@@ -29,12 +35,12 @@ import java.util.Map;
 	}
 
 
-	public Map<String, Subasta> getSubastasActivas() {
+	public Map<Integer, Subasta> getSubastasActivas() {
 		return subastasActivas;
 	}
 
 
-	public void setSubastasActivas(Map<String, Subasta> subastasActivas) {
+	public void setSubastasActivas(Map<Integer, Subasta> subastasActivas) {
 		this.subastasActivas = subastasActivas;
 	}
 
@@ -58,16 +64,16 @@ import java.util.Map;
 		this.nombre_operador = nombre_operador;
 	}
 
-	public void piezaSubasta(Pieza pieza) {
-	    if (!subastasActivas.containsKey(pieza.getId_pieza())) {
-	        Subasta nuevaSubasta = new Subasta();
-	        nuevaSubasta.setPiezaEnSubasta(pieza);
-	        subastasActivas.put(pieza.getId_pieza(), nuevaSubasta);
-	        System.out.println("La pieza se ha añadido a subasta.");
-	    } else {
-	        System.out.println("La pieza ya está en subasta.");
-	    }
-	}
+    public void piezaSubasta(Pieza pieza) {
+        if (!subastasActivas.containsKey(pieza.getId_pieza())) {
+            Subasta nuevaSubasta = new Subasta();
+            nuevaSubasta.setPiezaEnSubasta(pieza);
+            subastasActivas.put(pieza.getId_pieza(), nuevaSubasta);
+            System.out.println("La pieza se ha añadido a subasta.");
+        } else {
+            System.out.println("La pieza ya está en subasta.");
+        }
+    }
 
     public void registrarOferta(Pieza pieza, double oferta, Comprador comprador) {
         if (!subastasActivas.containsKey(pieza.getId_pieza())) {

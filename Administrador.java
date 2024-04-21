@@ -5,7 +5,12 @@ public class Administrador extends Usuario {
     public boolean permiso_ingrezo_pieza;
     private boolean confirmacion_ventas;
     private boolean devolucion_pieza;
-
+    
+    public Administrador(boolean permiso_ingrezo_pieza, boolean confirmacion_ventas, boolean devolucion_pieza) {
+        this.permiso_ingrezo_pieza = permiso_ingrezo_pieza;
+        this.confirmacion_ventas = confirmacion_ventas;
+        this.devolucion_pieza = devolucion_pieza;
+    }
     public void verificarComprador(Comprador comprador) {
         if (!comprador.isVerificado()) {
             comprador.setVerificado(true);
@@ -18,7 +23,7 @@ public class Administrador extends Usuario {
     public void actualizarSubasta(Subasta subasta, String fechaInicio, String fechaFin, double valorInicial) {
         subasta.setFecha_hora_inicio(fechaInicio);
         subasta.setFecha_hora_fin(fechaFin);
-        subasta.getPiezaEnSubasta().setValor_inicial(valorInicial); // Asignamos el valor inicial a la pieza en la subasta
+        subasta.getPiezaEnSubasta().setValor_inicial(valorInicial); 
         System.out.println("Subasta actualizada.");
    
     }

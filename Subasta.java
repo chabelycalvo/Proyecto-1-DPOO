@@ -1,4 +1,5 @@
 package proyecto;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Subasta {
@@ -13,6 +14,9 @@ public class Subasta {
     private Pieza piezaEnSubasta; 
     private Map<Comprador, Double> ofertas; 
     
+    public Subasta() {
+        this.ofertas = new HashMap<>();
+    }
 
     public String getTitulo() {
 		return titulo;

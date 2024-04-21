@@ -2,9 +2,9 @@ package proyecto;
 
 public abstract class Pieza {
     protected String titulo;
-    protected int ano;
+    protected int anio;
     protected String lugar_creacion;
-    protected String id_pieza;
+    protected int id_pieza;
     protected boolean disponible_valor_fijo;
     protected boolean pieza_bloqueada;
     protected boolean pieza_vendida;
@@ -12,7 +12,16 @@ public abstract class Pieza {
     protected double valor_inicial;
     protected String ubicacion;
     
-    // Métodos getters y setters
+   public Pieza(String titulo, int anio, String lugar_creacion, int id_pieza,
+            double valor_minimo, String ubicacion) {
+   this.titulo = titulo;
+   this.anio = anio;
+   this.lugar_creacion = lugar_creacion;
+   this.id_pieza = id_pieza;
+   this.valor_minimo = valor_minimo;
+   this.ubicacion = ubicacion;
+}
+
     
     public String getTitulo() {
         return titulo;
@@ -22,12 +31,12 @@ public abstract class Pieza {
         this.titulo = titulo;
     }
 
-    public int getAno() {
-        return ano;
+    public int getanio() {
+        return anio;
     }
 
-    public void setAno(int ano) {
-        this.ano = ano;
+    public void setanio(int anio) {
+        this.anio = anio;
     }
 
     public String getLugar_creacion() {
@@ -38,11 +47,11 @@ public abstract class Pieza {
         this.lugar_creacion = lugar_creacion;
     }
 
-    public String getId_pieza() {
+    public int getId_pieza() {
         return id_pieza;
     }
 
-    public void setId_pieza(String id_pieza) {
+    public void setId_pieza(int id_pieza) {
         this.id_pieza = id_pieza;
     }
 

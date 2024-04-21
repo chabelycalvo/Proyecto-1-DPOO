@@ -7,8 +7,18 @@ public class Comprador extends Usuario {
 	private double total_invertido;
 	private double limite_compra;
 	private String idiomas;
-
 	
+	public Comprador(boolean verificado, String nombre_comprador, String telefono_comprador, double total_invertido, double limite_compra, String idiomas, String login, String password)
+	{
+	    this.login = login; 
+	    this.password = password; 
+	    this.verificado = verificado;
+	    this.nombre_comprador = nombre_comprador;
+	    this.telefono_comprador = telefono_comprador;
+	    this.total_invertido = total_invertido;
+	    this.limite_compra = limite_compra;
+	    this.idiomas = idiomas;
+	}
 	public boolean isVerificado() {
 		return verificado;
 	}
